@@ -1,18 +1,14 @@
 <template>
-  <base-item
-    v-for="resource in storedResources"
-    :key="resource.id"
-    :name="resource.name"
-    :description="resource.description"
-    :link="resource.link"
-  ></base-item>
+  <stored-resources :resources="storedResources">
+  </stored-resources>
 </template>
 
 <script>
-import BaseItem from './components/base-components/BaseItem.vue';
+
+import StoredResources from './components/Resources/StoredResources.vue';
 export default {
   components: {
-    BaseItem
+    StoredResources
   },
   data() {
     return {
