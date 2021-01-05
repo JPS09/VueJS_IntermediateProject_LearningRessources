@@ -35,3 +35,16 @@ export default {
   }
 };
 </script>
+
+<style>
+*{
+  box-sizing: border-box;
+}
+html {
+  font-family: Helvetica;
+}
+
+body {
+  margin: 0;
+}
+</style>
