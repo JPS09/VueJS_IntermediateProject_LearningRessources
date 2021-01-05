@@ -5,7 +5,7 @@
 
 <script>
 
-import StoredResources from './components/Resources/StoredResources.vue';
+import StoredResources from './components/learning-resources/StoredResources.vue';
 export default {
   components: {
     StoredResources
