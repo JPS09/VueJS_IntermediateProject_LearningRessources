@@ -37,11 +37,14 @@ export default {
 </script>
 
 <style>
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
   box-sizing: border-box;
 }
+
 html {
-  font-family: Helvetica;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
