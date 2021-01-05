@@ -1,20 +1,20 @@
 <template>
   <ul>
-    <base-item
+    <learning-resource
       v-for="resource in resources"
       :key="resource.id"
       :name="resource.name"
       :description="resource.description"
       :link="resource.link"
-    ></base-item>
+    ></learning-resource>
   </ul>
 </template>
 
 <script>
-import BaseItem from './BaseResource.vue';
+import LearningResource from './LearningResource.vue';
 export default {
   components: {
-    BaseItem
+    LearningResource
   },
   props: {
     resources: {
