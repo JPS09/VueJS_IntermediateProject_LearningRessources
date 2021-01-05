@@ -3,7 +3,6 @@
     v-for="resource in storedResources"
     :key="resource.id"
     :name="resource.name"
-    :id="resource.id"
     :description="resource.description"
     :link="resource.link"
   ></base-item>

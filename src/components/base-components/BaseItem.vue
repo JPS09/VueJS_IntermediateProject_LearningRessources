@@ -8,7 +8,9 @@
         </header>
       </div>
       <p>{{ description }}</p>
-      <a :href="link" target="_blank">Go to {{name}}</a>
+      <nav>
+        <a :href="link" target="_blank">Go to {{ name }}</a>
+      </nav>
     </li>
   </ul>
 </template>
@@ -16,10 +18,6 @@
 <script>
 export default {
   props: {
-    id: {
-      type: String,
-      required: true
-    },
     name: {
       type: String,
       required: true
