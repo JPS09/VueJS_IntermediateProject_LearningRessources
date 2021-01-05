@@ -1,7 +1,12 @@
 <template>
   <ul>
-    <li >
-      <h3>{{ name }}</h3>
+    <li>
+      <div>
+        <header>
+          <h3>{{ name }}</h3>
+          <button>Delete</button>
+        </header>
+      </div>
       <p>{{ description }}</p>
       <a :href="link" target="_blank">{{ link }}</a>
     </li>

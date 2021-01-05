@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import BaseItem from './components/BaseItem.vue';
+import BaseItem from './components/base-components/BaseItem.vue';
 export default {
   components: {
     BaseItem
@@ -22,7 +22,7 @@ export default {
           id: 'google',
           name: 'Google',
           description: 'Google is the main research engine of the planet',
-          link: 'www.google.com'
+          link: 'https://www.google.com'
         },
         {
           id: 'vue-style-guide',
