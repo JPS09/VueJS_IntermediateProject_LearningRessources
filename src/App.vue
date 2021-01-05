@@ -1,5 +1,5 @@
 <template>
-  <the-header></the-header>
+  <the-header title='Good places to learn'></the-header>
   <stored-resources :resources="storedResources"> </stored-resources>
 </template>
 
