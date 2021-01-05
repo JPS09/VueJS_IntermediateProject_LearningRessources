@@ -5,7 +5,7 @@
 </template>
 
 <style scoped>
-header{
+header {
   background-color: rgb(179, 119, 10);
   color: white;
   display: flex;
