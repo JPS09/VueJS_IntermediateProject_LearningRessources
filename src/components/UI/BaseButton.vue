@@ -1,6 +1,6 @@
 <template>
   <button :type="type" :class="mode">
-    <slot></slot>
+    <slot>Action</slot>
   </button>
 </template>
 
