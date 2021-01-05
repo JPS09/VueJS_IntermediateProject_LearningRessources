@@ -1,13 +1,13 @@
 <template>
-  <the-header title='Good places to learn'></the-header>
-  <stored-resources :resources="storedResources"> </stored-resources>
+  <the-header title="Good places to learn"></the-header>
+  <the-resources></the-resources>
 </template>
 
 <script>
-import StoredResources from './components/learning-resources/StoredResources.vue';
+import TheResources from './components/learning-resources/TheResources';
 export default {
   components: {
-    StoredResources
+    TheResources
   },
   data() {
     return {
@@ -26,6 +26,11 @@ export default {
           link: 'https://v3.vuejs.org/style-guide/'
         }
       ]
+    };
+  },
+  provide() {
+    return {
+      resources: this.storedResources
     };
   }
 };

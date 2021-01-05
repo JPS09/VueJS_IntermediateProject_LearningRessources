@@ -11,6 +11,12 @@
     />
     <label for="link">Link</label>
     <input type="text" name="link" placeholder="Link" />
-    <button @click.prevent></button>
+    <button @click.prevent>Add</button>
   </form>
 </template>
+
+<style scoped>
+form {
+  display: grid;
+}
+</style>
