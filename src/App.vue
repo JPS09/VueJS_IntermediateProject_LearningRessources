@@ -1,11 +1,11 @@
 <template>
   <base-item
-    v-for="ressource in storedRessources"
-    :key="ressource.id"
-    :name="ressource.name"
-    :id="ressource.id"
-    :description="ressource.description"
-    :link="ressource.link"
+    v-for="resource in storedResources"
+    :key="resource.id"
+    :name="resource.name"
+    :id="resource.id"
+    :description="resource.description"
+    :link="resource.link"
   ></base-item>
 </template>
 
@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      storedRessources: [
+      storedResources: [
         {
           id: 'google',
           name: 'Google',
