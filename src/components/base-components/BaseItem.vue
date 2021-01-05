@@ -8,7 +8,7 @@
         </header>
       </div>
       <p>{{ description }}</p>
-      <a :href="link" target="_blank">{{ link }}</a>
+      <a :href="link" target="_blank">Go to {{name}}</a>
     </li>
   </ul>
 </template>
