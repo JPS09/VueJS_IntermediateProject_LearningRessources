@@ -1,18 +1,13 @@
 <template>
-  <base-item
-    v-for="resource in storedResources"
-    :key="resource.id"
-    :name="resource.name"
-    :description="resource.description"
-    :link="resource.link"
-  ></base-item>
+  <the-header title="Good places to learn"></the-header>
+  <the-resources></the-resources>
 </template>
 
 <script>
-import BaseItem from './components/base-components/BaseItem.vue';
+import TheResources from './components/learning-resources/TheResources';
 export default {
   components: {
-    BaseItem
+    TheResources
   },
   data() {
     return {
@@ -31,6 +26,11 @@ export default {
           link: 'https://v3.vuejs.org/style-guide/'
         }
       ]
+    };
+  },
+  provide() {
+    return {
+      resources: this.storedResources
     };
   }
 };

@@ -1,22 +1,26 @@
 <template>
   <ul>
     <li>
-      <div>
+      <base-card>
         <header>
           <h3>{{ name }}</h3>
-          <button>Delete</button>
+          <base-button mode='flat'>Delete</base-button>
         </header>
-      </div>
-      <p>{{ description }}</p>
-      <nav>
-        <a :href="link" target="_blank">Go to {{ name }}</a>
-      </nav>
+        <p>{{ description }}</p>
+        <nav>
+          <a :href="link" target="_blank">Go to {{ name }}</a>
+        </nav>
+      </base-card>
     </li>
   </ul>
 </template>
 
 <script>
+import BaseCard from '../UI/BaseCard';
 export default {
+  components: {
+    BaseCard
+  },
   props: {
     name: {
       type: String,
