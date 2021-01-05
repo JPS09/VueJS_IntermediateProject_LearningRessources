@@ -17,10 +17,16 @@ export default {
 
 <style scoped>
 header {
-  background-color: rgb(179, 119, 10);
-  color: white;
+  width: 100%;
+  height: 5rem;
+  background-color: #640032;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+header h1 {
+  color: white;
+  margin: 0;
 }
 </style>
