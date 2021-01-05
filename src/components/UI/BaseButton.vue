@@ -2,8 +2,6 @@
   <button>Delete</button>
 </template>
 
-
-
 <style scoped>
 button {
   padding: 0.75rem 1.5rem;
@@ -30,5 +28,4 @@ button:active {
 .flat:active {
   background-color: #edd2ff;
 }
-
 </style>
