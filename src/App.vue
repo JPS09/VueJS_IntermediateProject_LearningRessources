@@ -1,6 +1,6 @@
 <template>
   <the-header title="Good places to learn"></the-header>
-  <the-resources></the-resources>
+  <the-resources ></the-resources>
 </template>
 
 <script>
@@ -9,30 +9,6 @@ export default {
   components: {
     TheResources
   },
-  data() {
-    return {
-      storedResources: [
-        {
-          id: 'google',
-          name: 'Google',
-          description: 'Google is the main research engine of the planet',
-          link: 'https://www.google.com'
-        },
-        {
-          id: 'vue-style-guide',
-          name: 'Vue Style Guide',
-          description:
-            'Informations to keep your VueJS code as beautiful as possible',
-          link: 'https://v3.vuejs.org/style-guide/'
-        }
-      ]
-    };
-  },
-  provide() {
-    return {
-      resources: this.storedResources
-    };
-  }
 };
 </script>
 

@@ -9,6 +9,7 @@
           id="title"
           name="title"
           placeholder="Enter the resource name"
+          ref="titleInput"
         />
       </div>
       <div class="form-control">
@@ -19,37 +20,38 @@
           name="description"
           placeholder="What does this resource gives?"
           rows="3"
+          ref="descriptionInput"
         />
       </div>
       <div class="form-control">
         <label for="link">Link</label>
-        <input type="url" name="link" id="link" placeholder="Link" />
+        <input
+          type="url"
+          name="link"
+          id="link"
+          placeholder="Link"
+          ref="linkInput"
+        />
       </div>
-      <base-button @click.prevent type="submit">Add</base-button>
+      <base-button @click.prevent="addResource" type="submit">Add</base-button>
     </form>
   </base-card>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      titleInput: '',
-      descriptionInput: '',
-      linkInput: ''
-    };
-  },
   methods: {
     addResource() {
       const resource = {
         id: new Date().toUTCString(),
-        title: this.titleInput,
-        description: this.descriptionInput,
-        link: this.linkInput
+        title: this.$refs.titleInput.value,
+        description: this.$refs.descriptionInput.value,
+        link: this.$refs.linkInput.value
       };
-      this.$emit('add-resource', resource);
+      this.addNewResource(resource)
     }
-  }
+  },
+  inject:['addNewResource']
 };
 </script>
 <style scoped>
