@@ -63,13 +63,13 @@ export default {
   },
   methods: {
     checkInput() {
-      if (this.$refs.titleInput.value === '') {
+      if (this.$refs.titleInput.value.trim() === '') {
         this.isInputInvalid = true;
         this.isTitleEmpty = true;
-      } else if (this.$refs.descriptionInput.value === '') {
+      } else if (this.$refs.descriptionInput.value.trim() === '') {
         this.isInputInvalid = true;
         this.isDescriptionEmpty = true;
-      } else if (this.$refs.linkInput.value === '') {
+      } else if (this.$refs.linkInput.value.trim() === '') {
         this.isInputInvalid = true;
         this.isLinkEmpty = true;
       } else {
