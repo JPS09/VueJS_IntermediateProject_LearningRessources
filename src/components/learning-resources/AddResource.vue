@@ -36,9 +36,14 @@
     </form>
   </base-card>
   <error-dialog v-if="isInputInvalid">
-    <p v-if="isTitleEmpty">Please enter a title</p>
-    <p v-else-if="isDescriptionEmpty">Please enter a description</p>
-    <p v-else-if="isLinkEmpty">Please enter a link</p>
+    <template v-slot:error>
+      <p v-if="isTitleEmpty">Please enter a title</p>
+      <p v-else-if="isDescriptionEmpty">Please enter a description</p>
+      <p v-else-if="isLinkEmpty">Please enter a link</p>
+    </template>
+    <template v-slot:button>
+      <base-button @click='closeError'>Understood</base-button>
+    </template>
   </error-dialog>
 </template>
 
@@ -79,6 +84,12 @@ export default {
         link: this.$refs.linkInput.value
       };
       this.addNewResource(resource);
+    },
+    closeError() {
+      (this.isInputInvalid = false),
+        (this.isTitleEmpty = false),
+        (this.isDescriptionEmpty = false),
+        (this.isLinkEmpty = false);
     }
   },
   inject: ['addNewResource']
