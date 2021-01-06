@@ -35,10 +35,7 @@
       <base-button @click.prevent="checkInput" type="submit">Add</base-button>
     </form>
   </base-card>
-  <base-dialog v-if="isInputInvalid">
-    <template v-slot:header >
-      <h2></h2>
-    </template>
+  <base-dialog v-if="isInputInvalid" title='Invalid Input'>
     <template v-slot:message>
       <p v-if="isTitleEmpty">Please enter a title</p>
       <p v-else-if="isDescriptionEmpty">Please enter a description</p>
