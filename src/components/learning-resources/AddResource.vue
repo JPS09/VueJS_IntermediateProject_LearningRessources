@@ -35,18 +35,16 @@
       <base-button @click.prevent="checkInput" type="submit">Add</base-button>
     </form>
   </base-card>
-  <teleport to="body">
-    <base-dialog v-if="isInputInvalid" title="Invalid Input" @close="closeError">
-      <template #message>
-        <p v-if="isTitleEmpty">Please enter a title</p>
-        <p v-else-if="isDescriptionEmpty">Please enter a description</p>
-        <p v-else-if="isLinkEmpty">Please enter a link</p>
-      </template>
-      <template #action>
-        <base-button @click="closeError">Understood</base-button>
-      </template>
-    </base-dialog>
-  </teleport>
+  <base-dialog v-if="isInputInvalid" title="Invalid Input" @close="closeError">
+    <template #message>
+      <p v-if="isTitleEmpty">Please enter a title</p>
+      <p v-else-if="isDescriptionEmpty">Please enter a description</p>
+      <p v-else-if="isLinkEmpty">Please enter a link</p>
+    </template>
+    <template #action>
+      <base-button @click="closeError">Understood</base-button>
+    </template>
+  </base-dialog>
 </template>
 
 <script>

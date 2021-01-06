@@ -1,21 +1,24 @@
 <template>
-  <div @click="$emit('close')"></div>
-  <dialog open>
-    <header>
-      <slot name="header">
-        <h2>{{ title }}</h2>
-      </slot>
-    </header>
-    <section>
-      <slot name="message">Meaningfull message</slot>
-    </section>
-    <menu>
-      <slot name="action">
-        <base-button @click="$emit('close')"> Close </base-button>
-      </slot>
-    </menu>
-  </dialog>
+  <teleport to="body">
+    <div @click="$emit('close')"></div>
+    <dialog open>
+      <header>
+        <slot name="header">
+          <h2>{{ title }}</h2>
+        </slot>
+      </header>
+      <section>
+        <slot name="message">Meaningfull message</slot>
+      </section>
+      <menu>
+        <slot name="action">
+          <base-button @click="$emit('close')"> Close </base-button>
+        </slot>
+      </menu>
+    </dialog>
+  </teleport>
 </template>
+
 <script>
 export default {
   props: {
