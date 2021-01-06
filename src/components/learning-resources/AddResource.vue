@@ -36,7 +36,7 @@
     </form>
   </base-card>
   <teleport to="body">
-    <base-dialog v-if="isInputInvalid" title="Invalid Input">
+    <base-dialog v-if="isInputInvalid" title="Invalid Input" @close="closeError">
       <template #message>
         <p v-if="isTitleEmpty">Please enter a title</p>
         <p v-else-if="isDescriptionEmpty">Please enter a description</p>
