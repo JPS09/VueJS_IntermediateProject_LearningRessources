@@ -35,7 +35,7 @@
       <base-button @click.prevent="checkInput" type="submit">Add</base-button>
     </form>
   </base-card>
-  <error-dialog v-if="isInputInvalid">
+  <base-dialog v-if="isInputInvalid">
     <template v-slot:error>
       <p v-if="isTitleEmpty">Please enter a title</p>
       <p v-else-if="isDescriptionEmpty">Please enter a description</p>
@@ -44,11 +44,11 @@
     <template v-slot:button>
       <base-button @click="closeError">Understood</base-button>
     </template>
-  </error-dialog>
+  </base-dialog>
 </template>
 
 <script>
-import ErrorDialog from './ErrorDialog';
+
 export default {
   data() {
     return {
@@ -57,9 +57,6 @@ export default {
       isDescriptionEmpty: false,
       isLinkEmpty: false
     };
-  },
-  components: {
-    ErrorDialog
   },
   methods: {
     checkInput() {
