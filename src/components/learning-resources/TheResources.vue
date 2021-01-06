@@ -53,7 +53,6 @@ export default {
       this.selectedTab = tab;
     },
     addAResource(resource) {
-      console.log(resource);
       this.storedResources.unshift(resource);
       this.selectedTab = 'stored-resources';
     }

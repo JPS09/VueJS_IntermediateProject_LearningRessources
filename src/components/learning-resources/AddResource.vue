@@ -47,7 +47,6 @@ export default {
         description: this.$refs.descriptionInput.value,
         link: this.$refs.linkInput.value
       };
-      console.log(resource.title)
       this.addNewResource(resource)
     }
   },
