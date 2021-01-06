@@ -3,12 +3,12 @@
     <li>
       <base-card>
         <header>
-          <h3>{{ name }}</h3>
+          <h3>{{ title }}</h3>
           <base-button mode='flat'>Delete</base-button>
         </header>
         <p>{{ description }}</p>
         <nav>
-          <a :href="link" target="_blank">Go to {{ name }}</a>
+          <a :href="link" target="_blank">Go to {{ title }}</a>
         </nav>
       </base-card>
     </li>
@@ -22,7 +22,7 @@ export default {
     BaseCard
   },
   props: {
-    name: {
+    title: {
       type: String,
       required: true
     },

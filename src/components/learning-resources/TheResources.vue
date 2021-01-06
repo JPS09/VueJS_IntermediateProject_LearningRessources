@@ -28,13 +28,13 @@ export default {
       storedResources: [
         {
           id: 'google',
-          name: 'Google',
+          title: 'Google',
           description: 'Google is the main research engine of the planet',
           link: 'https://www.google.com'
         },
         {
           id: 'vue-style-guide',
-          name: 'Vue Style Guide',
+          title: 'Vue Style Guide',
           description:
             'Informations to keep your VueJS code as beautiful as possible',
           link: 'https://v3.vuejs.org/style-guide/'
@@ -53,7 +53,7 @@ export default {
       this.selectedTab = tab;
     },
     addAResource(resource) {
-      console.log('Received');
+      console.log(resource);
       this.storedResources.unshift(resource);
       this.selectedTab = 'stored-resources';
     }

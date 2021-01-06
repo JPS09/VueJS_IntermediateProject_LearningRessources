@@ -15,7 +15,6 @@
       <div class="form-control">
         <label for="description">Description</label>
         <textarea
-          type="text"
           id="description"
           name="description"
           placeholder="What does this resource gives?"
@@ -48,6 +47,7 @@ export default {
         description: this.$refs.descriptionInput.value,
         link: this.$refs.linkInput.value
       };
+      console.log(resource.title)
       this.addNewResource(resource)
     }
   },
