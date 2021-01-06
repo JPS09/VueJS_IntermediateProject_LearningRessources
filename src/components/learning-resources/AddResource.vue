@@ -32,19 +32,45 @@
           ref="linkInput"
         />
       </div>
-      <base-button @click.prevent="addResource" type="submit">Add</base-button>
+      <base-button @click.prevent="checkInput" type="submit">Add</base-button>
     </form>
   </base-card>
-  <error-dialog></error-dialog>
+  <error-dialog v-if="isInputInvalid">
+    <p v-if="isTitleEmpty">Please enter a title</p>
+    <p v-else-if="isDescriptionEmpty">Please enter a description</p>
+    <p v-else-if="isLinkEmpty">Please enter a link</p>
+  </error-dialog>
 </template>
 
 <script>
-import ErrorDialog from './ErrorDialog'
+import ErrorDialog from './ErrorDialog';
 export default {
-  components:{
+  data() {
+    return {
+      isInputInvalid: false,
+      isTitleEmpty: false,
+      isDescriptionEmpty: false,
+      isLinkEmpty: false
+    };
+  },
+  components: {
     ErrorDialog
   },
   methods: {
+    checkInput() {
+      if (this.$refs.titleInput.value === '') {
+        this.isInputInvalid = true;
+        this.isTitleEmpty = true;
+      } else if (this.$refs.descriptionInput.value === '') {
+        this.isInputInvalid = true;
+        this.isDescriptionEmpty = true;
+      } else if (this.$refs.linkInput.value === '') {
+        this.isInputInvalid = true;
+        this.isLinkEmpty = true;
+      } else {
+        this.addResource;
+      }
+    },
     addResource() {
       const resource = {
         id: new Date().toUTCString(),
@@ -52,10 +78,10 @@ export default {
         description: this.$refs.descriptionInput.value,
         link: this.$refs.linkInput.value
       };
-      this.addNewResource(resource)
+      this.addNewResource(resource);
     }
   },
-  inject:['addNewResource']
+  inject: ['addNewResource']
 };
 </script>
 <style scoped>
