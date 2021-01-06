@@ -1,5 +1,6 @@
 <template>
   <div>
+  </div>
     <dialog open>
       <header>
         <slot name="header">
@@ -13,7 +14,6 @@
         <slot name="action">Action</slot>
       </menu>
     </dialog>
-  </div>
 </template>
 <script>
 export default {
