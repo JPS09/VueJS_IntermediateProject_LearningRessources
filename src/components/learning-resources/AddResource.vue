@@ -36,12 +36,12 @@
     </form>
   </base-card>
   <base-dialog v-if="isInputInvalid" title='Invalid Input'>
-    <template v-slot:message>
+    <template #message>
       <p v-if="isTitleEmpty">Please enter a title</p>
       <p v-else-if="isDescriptionEmpty">Please enter a description</p>
       <p v-else-if="isLinkEmpty">Please enter a link</p>
     </template>
-    <template v-slot:action>
+    <template #action>
       <base-button @click="closeError">Understood</base-button>
     </template>
   </base-dialog>
