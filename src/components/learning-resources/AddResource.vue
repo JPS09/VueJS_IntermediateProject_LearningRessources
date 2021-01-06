@@ -30,6 +30,28 @@
   </base-card>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      titleInput: '',
+      descriptionInput: '',
+      linkInput: ''
+    };
+  },
+  methods: {
+    addResource() {
+      const resource = {
+        id: new Date().toUTCString(),
+        title: this.titleInput,
+        description: this.descriptionInput,
+        link: this.linkInput
+      };
+      this.$emit('add-resource', resource);
+    }
+  }
+};
+</script>
 <style scoped>
 label {
   font-weight: bold;
