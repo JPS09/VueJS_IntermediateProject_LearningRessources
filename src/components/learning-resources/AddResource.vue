@@ -35,10 +35,15 @@
       <base-button @click.prevent="addResource" type="submit">Add</base-button>
     </form>
   </base-card>
+  <error-dialog></error-dialog>
 </template>
 
 <script>
+import ErrorDialog from './ErrorDialog'
 export default {
+  components:{
+    ErrorDialog
+  },
   methods: {
     addResource() {
       const resource = {
