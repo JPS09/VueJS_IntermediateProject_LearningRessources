@@ -3,12 +3,14 @@
     <li>
       <base-card>
         <header>
-          <h3>{{ name }}</h3>
-          <base-button mode='flat'>Delete</base-button>
+          <h3>{{ title }}</h3>
+          <base-button mode="flat" @click="deleteAResource(id)"
+            >Delete</base-button
+          >
         </header>
         <p>{{ description }}</p>
         <nav>
-          <a :href="link" target="_blank">Go to {{ name }}</a>
+          <a :href="link" target="_blank">Go to {{ title }}</a>
         </nav>
       </base-card>
     </li>
@@ -22,7 +24,11 @@ export default {
     BaseCard
   },
   props: {
-    name: {
+    id: {
+      type: String,
+      required: true
+    },
+    title: {
       type: String,
       required: true
     },
@@ -34,7 +40,9 @@ export default {
       type: String,
       required: true
     }
-  }
+  },
+  emits: ['delete'],
+  inject: ['deleteAResource']
 };
 </script>
 
