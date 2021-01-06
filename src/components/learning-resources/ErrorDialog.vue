@@ -7,3 +7,14 @@
     </dialog>
   </div>
 </template>
+
+<style scoped>
+dialog{
+  position:fixed;
+  margin: auto;
+  top: 50vh;
+  left: 0%;
+  width: 25vw;
+  height: max-content;
+}
+</style>
