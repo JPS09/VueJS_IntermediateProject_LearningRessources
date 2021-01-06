@@ -18,19 +18,42 @@
           id="description"
           name="description"
           placeholder="What does this resource gives?"
+          rows="3"
         />
       </div>
       <div class="form-control">
         <label for="link">Link</label>
-        <input type="text" name="link" id="link" placeholder="Link" />
+        <input type="url" name="link" id="link" placeholder="Link" />
       </div>
-      <button @click.prevent>Add</button>
+      <base-button @click.prevent type="submit">Add</base-button>
     </form>
   </base-card>
 </template>
 
 <style scoped>
-form {
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
 
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.15rem;
+  border: 1px solid #ccc;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3a0061;
+  background-color: #f7ebff;
+}
+
+.form-control {
+  margin: 1rem 0;
 }
 </style>
