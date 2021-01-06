@@ -42,7 +42,7 @@
       <p v-else-if="isLinkEmpty">Please enter a link</p>
     </template>
     <template v-slot:button>
-      <base-button @click='closeError'>Understood</base-button>
+      <base-button @click="closeError">Understood</base-button>
     </template>
   </error-dialog>
 </template>
@@ -73,7 +73,7 @@ export default {
         this.isInputInvalid = true;
         this.isLinkEmpty = true;
       } else {
-        this.addResource;
+        this.addResource();
       }
     },
     addResource() {
@@ -83,6 +83,8 @@ export default {
         description: this.$refs.descriptionInput.value,
         link: this.$refs.linkInput.value
       };
+      console.log('oh');
+      this.cleanInput();
       this.addNewResource(resource);
     },
     closeError() {
@@ -90,6 +92,11 @@ export default {
         (this.isTitleEmpty = false),
         (this.isDescriptionEmpty = false),
         (this.isLinkEmpty = false);
+    },
+    cleanInput() {
+      this.$refs.titleInput.value = '';
+      this.$refs.descriptionInput.value = '';
+      this.$refs.linkInput.value = '';
     }
   },
   inject: ['addNewResource']
