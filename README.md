@@ -9,4 +9,3 @@ This **intermediary project** was made in Vue.js while following ***[a course](h
 - Using **refs to obtain data from the template** and *what difference* it makes when using it **instead of two-way binding like v-model**
 - **Teleporting components** to other part of the DOM to *avoid nested components* and to *help accessibility software*
 - Defining **Prop Type** and *if they are required*.
-
